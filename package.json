@@ -1,0 +1,19 @@
+{
+  "name": "home-assistant-awair-element-card",
+  "version": "0.1.0",
+  "description": "Awair Element–style air quality card for Home Assistant (with visual editor)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --dev",
+    "check": "tsc --noEmit",
+    "deploy": "npm run build && scp dist/awair-element-card.js* root@192.168.0.22:/config/www/ && ssh root@192.168.0.22 'touch /config/www/awair-element-card.js'"
+  },
+  "dependencies": {
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.4"
+  }
+}
